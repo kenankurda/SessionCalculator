@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<h1>@Context.Session.GetInt32("Increment").Value</h1>
+
+<form asp-action="Index" method="post">
+    <input type="submit" value="Increment" asp-action="Index" />
+
+</form>
+
+<br />
+<form asp-action="Decrement" method="post">
+    <input type="submit" value="Decrement" asp-action="Decrement" />
+
+</form>

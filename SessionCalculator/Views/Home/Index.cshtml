@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    int Increment = Context.Session.GetInt32("Increment").Value; 
+}
+<h1>@ViewData["Title"]</h1>
+
+@{
+    <p>
+        <div class="container p-3 my-3 bg-danger text-white">
+            @if (ViewBag.Message != null)
+            {
+                @ViewBag.Message
+            }
+            else
+            {
+                <div>The value of the counter is: @Increment</div>
+            }
+        </div>
+    </p>
+}
+
+
+<h1>@Context.Session.GetInt32("Increment").Value</h1>
+
+<form asp-action="Index" method="post">
+    <input name="Click" type="submit" value="Increment" asp-action="Index" />
+    <input name="Click" type="submit" value="Decrement" asp-action="Index" />
+</form>
+
